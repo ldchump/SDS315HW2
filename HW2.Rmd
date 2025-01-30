@@ -6,7 +6,7 @@ output: pdf_document
 ---
 
 ### GITHUB
-
+https://github.com/ldchump/SDS315HW2 
 
 ```{r global_options, echo=FALSE}
 knitr::opts_chunk$set(fig.height=6, fig.width=10, warning=FALSE, tidy=TRUE, tidy.opts=list(width.cutoff=60))
@@ -17,6 +17,8 @@ library('tidyverse')
 library('rmarkdown')
 library('tinytex')
 library('knitr')
+library('xtable')
+library('float')
 ```
 
 ## Problem 1
@@ -191,7 +193,15 @@ The above faceted scatter plot showcases the distribution of boardings and tempe
 
 Make a table of the top 10 most popular songs since 1958, as measured by the total number of weeks that a song spent on the Billboard Top 100. 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#
+#
+#
+#
+#
+#
+#
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 hot100 <- read.csv('billboard.csv')
 h100p1a <- group_by(hot100, performer, song)
 h100p1b <- summarize(h100p1a, count = max(weeks_on_chart))
